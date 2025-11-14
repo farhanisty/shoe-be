@@ -1,5 +1,6 @@
 import express from "express";
 import authRoutes from "./routes/auth.route.js"
+import prisma from "./lib/prisma.js"
 
 const app = express();
 const port = 3000;
