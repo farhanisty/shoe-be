@@ -1,6 +1,7 @@
 import express from "express";
 import authRoutes from "./routes/auth.route.js"
-import prisma from "./lib/prisma.js"
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 const port = 3000;
