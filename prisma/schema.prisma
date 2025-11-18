@@ -20,3 +20,19 @@ model User {
   name      String?
   createdAt DateTime @default(now())
 }
+
+model RfidCard {
+  id        Int      @id @default(autoincrement())
+  uid       String   @unique
+  ownerName String
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
+
+model DeviceLog {
+  id          Int      @id @default(autoincrement())
+  event       String   
+  detail      String?
+  evidenceUrl String?  
+  timestamp   DateTime @default(now())
+}
