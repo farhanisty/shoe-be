@@ -17,6 +17,12 @@ app.use("/auth", authRoutes);
 
 app.use("/api/card", cardRoutes);
 
+app.get("/api/status", (req, res) => {
+  return res.json({
+    "status": "ok"
+  });
+})
+
 app.listen(port, () => {
   console.log(`Express app listening at http://localhost:${port}`);
 });

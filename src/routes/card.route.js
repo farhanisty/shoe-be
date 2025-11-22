@@ -5,5 +5,6 @@ const router = Router();
 
 router.get("/", CardController.getCards)
 router.post("/", CardController.postCard)
+router.delete("/:id", CardController.deleteCard)
 
 export default router;

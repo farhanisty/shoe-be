@@ -10,5 +10,19 @@ export const CardService = {
   },
   async getAllCard() {
     return prisma.card.findMany();
+  },
+
+  async deleteCardById(id) {
+    try {
+      await prisma.card.delete({
+        where: {
+          id: id
+        }
+      })
+
+      return "success";
+    } catch (e) {
+      return e.code
+    }
   }
 }

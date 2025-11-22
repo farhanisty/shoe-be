@@ -47,5 +47,23 @@ export const CardController = {
         error: "INTERNAL SERVER ERRROR"
       })
     }
+  },
+
+  async deleteCard(req, res) {
+    const id = req.params.id;
+
+    const deleteStatus = await CardService.deleteCardById(id);
+
+    if (deleteStatus === "success") {
+      return res.status(204).send();
+    } else if (deleteStatus === "P2025") {
+      return res.status(404).json({
+        message: `${id} Not Found`
+      })
+    } else {
+      return res.status(500).json({
+        message: "INTERNAL SERVER ERROR"
+      })
+    }
   }
 }
